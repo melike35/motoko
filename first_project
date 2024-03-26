@@ -1,0 +1,54 @@
+// Hesap Makinesi
+//    Değişkenler (let ->immutable, var-> mutable   )
+//    Operatörler
+//    ASYNC Metodu
+//    IF Condition
+
+//  Canister = Akıllı Sözleşme
+
+
+actor hesap_makinesi {
+var hucre: Int=  0 ;
+//Toplama
+// Fonksiyon
+
+public func toplama(s: Int) : async Int {
+  hucre +=s;
+  hucre
+  //Debug.print(debug_show ((hucre));)
+};
+
+// çıkarma
+
+public func cikarma (s:Int) : async Int{
+  hucre -= s;
+  hucre
+};
+public func carpma (s:Int) : async Int{
+  hucre *= s;
+  hucre
+};
+
+
+// bolmede 0 durumunu kontrol et
+public func bolme (s:Int) : async ?Int{     
+  if (s == 0) {
+    null
+  }
+  else {
+    hucre /= s;
+    ?hucre
+  };
+
+  };
+
+
+  // temizle 
+public func temizle () : async(){
+  hucre :=0;
+  };
+  
+
+
+
+};
